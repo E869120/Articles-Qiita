@@ -1,0 +1,592 @@
+# 0. はじめに
+* [レッドコーダーが教える、競プロ・AtCoder上達のガイドライン【初級編：競プロを始めよう！】](https://qiita.com/e869120/items/f1c6f98364d1443148b3)
+
+からの続きです！！！
+
+## 中級編から読む方へ
+近年、[AtCoder](https://atcoder.jp/) を中心とした競技プログラミング（競プロ）の存在感が日に日に高まってきています。近年では、[AtCoderJobs](https://jobs.atcoder.jp/) という AtCoder での実力に応じて求人に応募できるサービスや、[アルゴリズム実技検定](https://past.atcoder.jp/)という名の検定サービスも現れてきています。
+
+そんな中、**「競プロでどうやって上達すれば良いのかわからない」**と思い悩んでいる方は多いと思います。その悩みも、実力帯ごとに異なり、
+
+* 最初に何をやれば良いのか悩んでいる競プロ未経験者もいる
+* 競プロ成績上位に食い込むためには何をやれば良いのか悩んでいる人もいる
+* 部活や社内などで、どういう競プロの教え方をすれば良いのか悩んでいる人もいる
+
+と思います。そこで本記事では、**競技プログラミングで上達するためにはどういうことを学べば良いのか、どういう練習をすれば良いのかのガイドラインをレベル別に示し、上達に役立ててもらう**ことを最大の目標としております。
+
+## 目次
+#### [初級編](https://qiita.com/e869120/items/f1c6f98364d1443148b3)
+|章  |タイトル  |備考  |
+|---|---|---|
+|0.  |[はじめに](https://qiita.com/e869120/items/f1c6f98364d1443148b3#0-はじめに)  |  |
+|1-1.  |[競プロとは何か](https://qiita.com/e869120/items/f1c6f98364d1443148b3#1-1-競プロとは何か)  |ここからサポートしていきます  |
+|1-2.  |[競プロの 6 つの面白さ](https://qiita.com/e869120/items/f1c6f98364d1443148b3#1-2-競プロの-6-つの面白さ)  |「競プロって、面白い」を伝えていきます  |
+|1-3.  |[早速競プロを始めてみよう](https://qiita.com/e869120/items/f1c6f98364d1443148b3#1-3-早速競プロを始めてみよう)  |  |
+|1-4.  |[AtCoder のレーティングとは](https://qiita.com/e869120/items/f1c6f98364d1443148b3#1-4-競プロをやる前に-atcoder-のレーティングとは)  |  |
+|1-5.  |[「茶色コーダー」で要求される 4 つのこと](https://qiita.com/e869120/items/f1c6f98364d1443148b3#1-5-茶色コーダーで要求される-4-つのこと)  |  |
+|1-6.  |[「茶色コーダー」になるためのガイドライン](https://qiita.com/e869120/items/f1c6f98364d1443148b3#1-6-茶色コーダーになるためのガイドライン)  |初級編のメインです  |
+|1-7.  |[Tips： AtCoder の過去問を解ける便利なサイト](https://qiita.com/e869120/items/f1c6f98364d1443148b3#1-7-tips-atcoder-の過去問を解ける便利なサイト)  |  |
+|1-8.  |[おまけ：競プロにおける C++ のすすめ](https://qiita.com/e869120/items/f1c6f98364d1443148b3#1-8-おまけ競プロにおける-c-のすすめ)  |  |
+
+#### 中級編
+|章  |タイトル  |備考  |
+|---|---|---|
+|2-1.  |[「水色コーダー」で要求される 4 つのこと](https://qiita.com/e869120/items/eb50fdaece12be418faa#2-1-水色コーダーで要求される-4-つのこと)  |  |
+|2-2.  |[「水色コーダー」になるためのガイドライン](https://qiita.com/e869120/items/eb50fdaece12be418faa#2-2-水色コーダーになるためのガイドライン)  |中級編のメインです  |
+|2-3.  |[分野別　初中級者が解くべき過去問精選 100 問](https://qiita.com/e869120/items/eb50fdaece12be418faa#2-3-分野別初中級者が解くべき過去問精選-100-問)  |この 100 問解けば実力上がると思います  |
+|2-4.  |[「水色コーダー」を目指す人のための Tips 5 個](https://qiita.com/e869120/items/eb50fdaece12be418faa#2-4-水色コーダーを目指す人のための-tips-5-個)  |  |
+
+#### [上級編](https://qiita.com/e869120/items/acba3dd8649d913102b5)
+|章  |タイトル  |備考  |
+|---|---|---|
+|3-1.  |[「黄色コーダー」で要求される 6 つのこと](https://qiita.com/e869120/items/acba3dd8649d913102b5#3-1-黄色コーダーで要求される-6-つのこと)  |  |
+|3-2.  |[「黄色コーダー」になるためのガイドライン](https://qiita.com/e869120/items/acba3dd8649d913102b5#3-2-黄色コーダーになるためのガイドライン)  |上級編のメインです  |
+|3-3.  |[分野別　上級者が解くべき過去問精選 100 + 50 問](https://qiita.com/e869120/items/acba3dd8649d913102b5#3-3-分野別上級者が解くべき過去問精選-100--50-問)  |この 150 問で実力上がります  |
+|3-4.  |[「黄色コーダー」を目指す人のための Tips 4 個](https://qiita.com/e869120/items/acba3dd8649d913102b5#3-4-黄色コーダーを目指す人のための-tips-4-個)  |  |
+|4.  |[「橙色コーダー」になるためには何をすれば良いか？](https://qiita.com/e869120/items/acba3dd8649d913102b5#4-橙色コーダーになるためには何をすれば良いのか)  |橙色までサポートします  |
+|5.  |[「橙色コーダー」の先　～ガチンコ競技としての競プロのはじまり～](https://qiita.com/e869120/items/acba3dd8649d913102b5#5-橙色コーダーの先ガチンコ競技としての競プロのはじまり)  |  |
+|6.  |[おわりに](https://qiita.com/e869120/items/acba3dd8649d913102b5#6-おわりに)  |  |
+<br />
+
+# 2-0. 中級編で紹介すること
+中級編では、AtCoder で<font color="#00AAAA">**水色コーダー**</font>まで最速で上達する方法を記します。つまり、<font color="#00AAAA">**レーティング 1200**</font> に最速で到達する方法を記します。
+
+なお、AtCoder のレーティングは以下の表の通りです。水色コーダーは、**全体の上位 1 割**くらいです。[^1]
+
+|レーティング  |色  |相対的な位置  |絶対的な位置 |
+|---|---|---|---|
+|2800+  |<font color="#FF0000">**赤**</font>  |上位 0.3%  | |
+|2400-2799  |<font color="#FF7700">**橙**</font>  |上位 0.9%  | |
+|2000-2399  |<font color="#AAAA00">**黄**</font>  |上位 2.5%  |アルゴリズムの研究職・研究開発で重宝されるレベル |
+|1600-1999  |<font color="#0000FF">**青**</font>  |上位 6%  |ほとんどのIT企業でアルゴリズム能力がカンストする |
+|1200-1599  |<font color="#00AAAA">**水**</font>  |上位 12%  |半数以上のIT企業でアルゴリズム能力がカンストする |
+|800-1199  |<font color="#007700">**緑**</font>  |上位 24%  |エンジニアとしてかなり優秀 |
+|400-799  |<font color="#774400">**茶**</font>  |上位 40%  |学生なら優秀 |
+|1-399 |<font color="#777777">**灰**</font>  |上位 100%  | |
+※ 絶対的な位置に関しては [AtCoder 社長・chokudai さんのブログ](http://chokudai.hatenablog.com/entry/2019/02/11/155904) がソースです。
+![11.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/988009a6-097e-52d4-a252-181d8b655959.png)
+<br />
+
+# 2-1. 「水色コーダー」で要求される 4 つのこと
+AtCoder で<font color="#00AAAA">**水色コーダー**</font>、つまり<font color="#00AAAA">**レーティング 1200**</font> に到達するには、
+
+* AtCoder Beginner Contest で確率 7 割以上で 4 問正解できる
+* AtCoder Beginner Contest で確率 2-3 割で 5 問正解できる
+* AtCoder Beginner Contest の問題をある程度早く解くことができる
+    * 目安は、A 問題 1 分、B 問題 4 分、C 問題 10 分、D 問題 30 分
+
+ことが要求されます。そのためには、以下の 4 つのことができれば良いと考えます。（もちろん、[茶色コーダーで要求される 4 つのこと](https://qiita.com/e869120/items/f1c6f98364d1443148b3#1-5-%E8%8C%B6%E8%89%B2%E3%82%B3%E3%83%BC%E3%83%80%E3%83%BC%E3%81%A7%E8%A6%81%E6%B1%82%E3%81%95%E3%82%8C%E3%82%8B-4-%E3%81%A4%E3%81%AE%E3%81%93%E3%81%A8) は全てクリアしている必要があります。）
+
+#### 条件 1
+[標準ライブラリ（STL）](https://ja.wikipedia.org/wiki/%E6%A8%99%E6%BA%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA)を理解し、コンテストでもそれを使えるようになる。
+ちなみに、C++ の場合、使えてほしい STL は以下の 25 個。
+
+| | | | | |
+|---|---|---|---|---|
+|[abs](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-1-%E7%B5%B6%E5%AF%BE%E5%80%A4-abs) |[sin/cos/tan](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-2-%E4%B8%89%E8%A7%92%E9%96%A2%E6%95%B0-sincostan) |[string](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-3-%E6%96%87%E5%AD%97%E5%88%97-string) |[min/max](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-4-%E6%9C%80%E5%B0%8F%E5%80%A4%E6%9C%80%E5%A4%A7%E5%80%A4-minmax) |[swap](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-5-%E5%80%A4%E3%81%AE%E4%BA%A4%E6%8F%9B-swap)|
+|[__gcd](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-6-%E6%9C%80%E5%A4%A7%E5%85%AC%E7%B4%84%E6%95%B0-__gcd) |[rand](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-7-%E4%B9%B1%E6%95%B0-rand) |[clock](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-8-%E6%99%82%E9%96%93%E8%A8%88%E6%B8%AC-clock) |[reverse](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-9-%E9%85%8D%E5%88%97%E3%82%92%E9%80%86%E9%A0%86%E3%81%AB%E4%B8%A6%E3%81%B3%E6%9B%BF%E3%81%88-reverse) |[sort](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-10-%E3%82%BD%E3%83%BC%E3%83%88-sort) |
+|[vector](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-11-vector) |[stack](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-12-stack) |[queue](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-13-queue) |[priority_queue](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-14-priority_queue) |[map](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-15-map) |
+|[lower_bound](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-16-lower_bound) |[set](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-17-set) |[pair](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-18-pair) |[tuple](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-19-tuple) |[assert](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-20-assert) |
+|[count](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-21-count) |[find](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-22-find) |[next_permutation](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-23-next_permutation) |[__builtin_popcount](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-24-__builtin_popcount) |[bitset](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-25-bitset) |
+
+#### 条件 2
+以下に書かれている、基本的な[アルゴリズム](https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0)と[データ構造](https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0)を全て理解する。
+
+**アルゴリズム（12 個）**
+
+* 全探索（bit 全探索、順列全探索を含む）
+* 二分探索
+* 深さ優先探索（DFS）
+* 幅優先探索（BFS）
+* 動的計画法（bitDP などを含む）
+* ダイクストラ法（最短経路問題）
+* ワーシャルフロイド法（最短経路問題）
+* クラスカル法（最小全域木問題）
+* 高速な素数判定法
+* べき乗を高速に計算するアルゴリズム
+* 逆元を計算するアルゴリズム
+* 累積和
+
+**データ構造（3 個）**
+
+* グラフ（グラフ理論）
+* 木
+* Union-Find
+
+#### 条件 3
+条件 2 で紹介した基本的なアルゴリズムをコンテスト中に引き出し、それらを使えるようになる。
+つまり、本記事で紹介する「基本アルゴリズム」が完全に身につく、ということ。
+
+#### 条件 4
+15 行程度のプログラムであれば、ほぼバグらせずに書くことができる。
+35 行程度のプログラムであれば、ある程度速く書くことができる。バグらせても、平均して 5 分以内でバグを解決できる。
+
+※ 実際に、35 行程度のプログラムを、バグ取り含めて平均して 15 分で書けるようになれば、難しめの数学的考察が必要な問題が無い場合、AtCoder Beginner Contest で 4 問正解を 50 分以内で達成できることが多い。
+
+#### 補足
+上の 4 つの条件を満たすようになれば、AtCoder Beginner Contest の D 問題までは 7 - 8 割解けるようになると思います。1 - 2 割は難しめの数学的考察が必要な問題が出題されますが、それを解かなくてもコーディングの速度と正確性を鍛えることによって、水色コーダーになることは十分可能です。
+
+ちなみに、E 問題となれば数学的考察を必要とする問題も少し増えてきますが、典型アルゴリズムの活用で解ける問題が多いので、過去問を解いて演習量を増やせば、3 - 5 割くらいの確率で解けるようになっていくと思います。
+
+---
+
+さて、それらができるようになるためには、どのような練習をすれば良いのでしょうか。
+<br />
+
+# 2-2. 「水色コーダー」になるためのガイドライン
+<font color="#00AAAA">**水色コーダー**</font>に到達するためにやるべきことは、以下の 5 つだと考えています。
+
+* [ステップ 1: 標準ライブラリを使えるようになる！](https://qiita.com/e869120/items/eb50fdaece12be418faa#2-2-1-%E6%A8%99%E6%BA%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92%E4%BD%BF%E3%81%88%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%82%8B)
+* [ステップ 2: 12 個の基本アルゴリズムをマスターする！](https://qiita.com/e869120/items/eb50fdaece12be418faa#2-2-2-12-%E5%80%8B%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%82%92%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%81%99%E3%82%8B)
+* [ステップ 3: 3 個の基本データ構造をマスターする！](https://qiita.com/e869120/items/eb50fdaece12be418faa#2-2-3-3-%E5%80%8B%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%82%92%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%81%99%E3%82%8B)
+* [ステップ 4: 過去問を解きまくる！](https://qiita.com/e869120/items/eb50fdaece12be418faa#2-2-4-%E9%81%8E%E5%8E%BB%E5%95%8F%E3%82%92%E8%A7%A3%E3%81%8D%E3%81%BE%E3%81%8F%E3%82%8B)
+* [ステップ 5: バーチャルコンテストを活用して早解きを鍛える！](https://qiita.com/e869120/items/eb50fdaece12be418faa#2-2-5-%E6%97%A9%E8%A7%A3%E3%81%8D%E3%82%92%E9%8D%9B%E3%81%88%E3%82%8B%E3%83%90%E3%83%BC%E3%83%81%E3%83%A3%E3%83%AB%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88%E3%81%AE%E3%81%99%E3%81%99%E3%82%81)
+
+それぞれ、順番に説明していきたいと思います。
+
+## 2-2-1. 標準ライブラリを使えるようになる！
+競技プログラミングにおいて、[標準ライブラリ（STL）](https://ja.wikipedia.org/wiki/%E6%A8%99%E6%BA%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA)はとても便利です。例えば C++ で問題を解く場合、AtCoder Beginner Contest の E 問題レベルでは **50% 程度**の問題で、どこかしらの場面で標準ライブラリの機能が役立ちます。
+
+ただし、全ての標準ライブラリを理解する必要がある訳ではありません。例えば C++ の場合、競プロで知っておきたい標準ライブラリは以下の **25 個**に絞られます。
+
+| | | | | |
+|---|---|---|---|---|
+|[abs](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-1-%E7%B5%B6%E5%AF%BE%E5%80%A4-abs) |[sin/cos/tan](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-2-%E4%B8%89%E8%A7%92%E9%96%A2%E6%95%B0-sincostan) |[string](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-3-%E6%96%87%E5%AD%97%E5%88%97-string) |[min/max](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-4-%E6%9C%80%E5%B0%8F%E5%80%A4%E6%9C%80%E5%A4%A7%E5%80%A4-minmax) |[swap](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-5-%E5%80%A4%E3%81%AE%E4%BA%A4%E6%8F%9B-swap)|
+|[__gcd](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-6-%E6%9C%80%E5%A4%A7%E5%85%AC%E7%B4%84%E6%95%B0-__gcd) |[rand](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-7-%E4%B9%B1%E6%95%B0-rand) |[clock](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-8-%E6%99%82%E9%96%93%E8%A8%88%E6%B8%AC-clock) |[reverse](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-9-%E9%85%8D%E5%88%97%E3%82%92%E9%80%86%E9%A0%86%E3%81%AB%E4%B8%A6%E3%81%B3%E6%9B%BF%E3%81%88-reverse) |[sort](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-10-%E3%82%BD%E3%83%BC%E3%83%88-sort) |
+|[vector](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-11-vector) |[stack](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-12-stack) |[queue](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-13-queue) |[priority_queue](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-14-priority_queue) |[map](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-15-map) |
+|[lower_bound](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-16-lower_bound) |[set](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-17-set) |[pair](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-18-pair) |[tuple](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-19-tuple) |[assert](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-20-assert) |
+|[count](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-21-count) |[find](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-22-find) |[next_permutation](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-23-next_permutation) |[__builtin_popcount](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-24-__builtin_popcount) |[bitset](https://qiita.com/e869120/items/518297c6816adb67f9a5#3-25-bitset) |
+
+そこで、標準ライブラリを使えるようになるために、読むべき記事が 2 つあります。（私が執筆した記事です）
+記事を読んで、これらの記事に載っている問題例を解くと、標準ライブラリ（STL 機能）がマスターできると思います。
+
+**25 個の標準ライブラリの機能を理解する**
+
+* [厳選！C++ アルゴリズム実装に使える 25 の STL 機能【前編】](https://qiita.com/e869120/items/518297c6816adb67f9a5)
+
+**標準ライブラリが競プロのどんな場面で使われるか理解する**
+
+* [厳選！C++ アルゴリズム実装に使える 25 の STL 機能【後編】](https://qiita.com/e869120/items/702ca1c1ed6ff6770257)
+
+## 2-2-2. 12 個の基本アルゴリズムをマスターする！
+[初級編](https://qiita.com/e869120/items/f1c6f98364d1443148b3)でも述べた通り、競プロの本質は「実行時間制限に間に合う効率的なプログラムを考え、実装すること」です。その効率的なプログラムを実装することにおいて、典型的なアルゴリズムを知っていると非常にお得です。
+
+しかし、<font color="#00AAAA">**水色コーダー**</font>、すなわち<font color="#00AAAA">**レーティング 1200**</font> に到達するために理解する必要があるアルゴリズムは、僅か **12 個**です。
+
+| | | | |
+|---|---|---|---|
+|全探索 |二分探索 |深さ優先探索 (DFS) |幅優先探索 (BFS) |
+|動的計画法 (DP) |ダイクストラ法 |ワーシャルフロイド法 |クラスカル法 |
+|高速な素数判定法 |べき乗を高速に計算する手法 |逆元を計算する手法 |累積和 |
+※ ダイクストラ法・ワーシャルフロイド法は[最短経路問題](https://ja.wikipedia.org/wiki/%E6%9C%80%E7%9F%AD%E7%B5%8C%E8%B7%AF%E5%95%8F%E9%A1%8C)を解くアルゴリズムです。
+※ クラスカル法は[最小全域木問題](https://dai1741.github.io/maximum-algo-2012/docs/minimum-spanning-tree/)を解くアルゴリズムです。
+
+それらのアルゴリズムが学習できる記事たちなどを紹介します。
+
+#### 全探索
+全探索は、大きく分けて「全列挙（全探索）」「ビット全探索」「順列全探索」の 3 つに分かれます。それぞれを学習できる記事は以下の通りです。
+
+* **全列挙：**[本記事初級編 1-6-4. 節](https://qiita.com/e869120/items/f1c6f98364d1443148b3#1-6-4-%E5%85%A8%E6%8E%A2%E7%B4%A2%E3%81%AB%E6%85%A3%E3%82%8C%E3%82%8B)
+* **ビット全探索：**　[bit 全探索 - けんちょんの競プロ精進記録](http://drken1215.hatenablog.com/entry/2019/12/14/171657) by @drken 
+* **順列全探索：**　[計算量オーダーの求め方を総整理！ 〜 どこから log が出て来るか 〜
+　の　例12](https://qiita.com/drken/items/872ebc3a2b5caaa4a0d0#%E4%BE%8B-12-%E9%A0%86%E5%88%97%E5%85%A8%E6%8E%A2%E7%B4%A2-onn) by @drken 
+
+#### 二分探索
+アルゴリズムの代表例ともいわれる二分探索は、以下の 2 記事で解説されています。
+
+* 二分探索とは：[アルゴリズムを勉強するなら二分探索から始めよう！ 『なっとく！アルゴリズム』より](https://codezine.jp/article/detail/9900?p=2)
+* 競プロで使える二分探索：[二分探索アルゴリズムを一般化 〜 めぐる式二分探索法のススメ 〜](https://qiita.com/drken/items/97e37dd6143e33a64c8c)
+
+【補足】二分探索に類似したアルゴリズムとして「二分法」があります。それについて詳しく知りたい方は以下の記事をお読みください。
+
+* [二分法とは？   アルゴリズム・収束・例題](https://risalc.info/src/bisection-method.html)
+
+#### 深さ優先探索 (DFS)
+競プロに使えるテクニックの一つです。以下の記事で解説されています。
+
+* [DFS (深さ優先探索) 超入門！ 〜 グラフ・アルゴリズムの世界への入口 〜【前編】](https://qiita.com/drken/items/4a7869c5e304883f539b)
+* [DFS (深さ優先探索) 超入門！ 〜 グラフ・アルゴリズムの世界への入口 〜【後編】](https://qiita.com/drken/items/a803d4fc4a727e02f7ba)
+
+#### 幅優先探索 (BFS)
+競プロで使えるテクニックの一つです。以下の記事で解説されています。
+
+* [BFS (幅優先探索) 超入門！ 〜 キューを鮮やかに使いこなす 〜](https://qiita.com/drken/items/996d80bcae64649a6580)
+
+#### 動的計画法 (DP)
+以下の 3 つの種類の動的計画法（DP）が理解できれば、水色コーダーになるために求められる動的計画法の問題は大体解けます。
+
+* ナップザック DP（部分和問題・最小共通部分列などは全てこれに含まれます）
+* 区間 DP
+* bit DP
+
+それぞれの種類について、アルゴリズムは以下の記事で解説されています。
+
+* **ナップザック DP：**　[典型的な DP (動的計画法) のパターンを整理 Part 1 ～ ナップサック DP 編 ～](https://qiita.com/drken/items/a5e6fe22863b7992efdb)
+* **区間 DP：**　[区間 DP を勉強してみた - Kutimoti の競プロメモ](http://kutimoti.hatenablog.com/entry/2018/03/10/220819)
+* **bit DP：**　[ビット演算 (bit 演算) の使い方を総特集！ 〜 マスクビットから bit DP まで 〜　の　11 章](https://qiita.com/drken/items/7c6ff2aa4d8fce1c9361#11-bit-dp)
+
+ちなみに、<font color="#774400">**茶色コーダー**</font>・<font color="#007700">**緑コーダー**</font>には少し難しめですが、DP の教育的な問題がまとまったコンテストがあるので、過去問としてこれを最初の数問だけでも解くと良いと思います。（全部で 26 問あります）
+
+* コンテスト：　[Educational DP Contest | AtCoder](https://atcoder.jp/contests/dp)
+* 解説記事：　[リンク](https://www.hamayanhamayan.com/entry/2019/01/12/163853)
+
+#### ダイクストラ法
+$N$ 頂点 $M$ 辺の[グラフ](https://mathtrain.jp/graph)における頂点 $1$ から各頂点への最短経路長を、$O(M \log{N})$ で計算するアルゴリズムです。詳しくは、以下の記事で解説されています。
+
+* [最短経路問題総特集！！！～BFSから拡張ダイクストラまで～](https://qiita.com/ageprocpp/items/cdf67e828e1b09316f6e#%E3%83%80%E3%82%A4%E3%82%AF%E3%82%B9%E3%83%88%E3%83%A9%E6%B3%95) by @ageprocpp 
+
+#### ワーシャルフロイド法
+$N$ 頂点 $M$ 辺の[グラフ](https://mathtrain.jp/graph)における全頂点対間の最短経路長を、$O(N^3)$ で計算するアルゴリズムです。詳しくは、以下の記事で解説されています。
+
+* [最短経路問題総特集！！！～BFSから拡張ダイクストラまで～](https://qiita.com/ageprocpp/items/cdf67e828e1b09316f6e#%E3%83%AF%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%AB%E3%83%95%E3%83%AD%E3%82%A4%E3%83%89%E6%B3%95)
+
+#### クラスカル法
+以下の 2 記事で解説されています。
+
+* アルゴリズム：[最小全域木問題 (クラスカル法とプリム法)](https://mickey24.hatenablog.com/entry/20090605/1244132474)
+* （参考）正当性の証明：[Kruskal法をココロから納得する | けんちょんの競プロ精進記録](http://drken1215.hatenablog.com/entry/20121223/1356230697)
+
+#### 高速な素数判定法
+$N$ が素数であるか $O(\sqrt{N})$ で計算する手法です。
+単純に、$N$ を $2, 3, 4, 5, ..., \sqrt{N}$ で割って、どれでも割れなければ素数です、というアルゴリズムです。例えば、$37$ は $2, 3, 4, 5, 6$ のいずれでも割れないので素数です。
+
+※ 正当性は、もし $N$ が素数でなくて $N = pq$ $(p \geq 2, q \geq 2)$ で表せるとすると、$p, q$ の少なくとも片方が $\sqrt{N}$ 以下だからです。両方 $\sqrt{N}$ を超えてしまうと、$pq > \sqrt{N} * \sqrt{N} = N$、よって $pq > N$ となってしまい、矛盾が生じます。
+
+#### べき乗を高速に計算するアルゴリズム
+$a^b$ を $m$ で割った余りが $O(\log{b})$ で計算するアルゴリズムです。以下の記事で解説されています。
+
+* [「1000000007 で割ったあまり」の求め方を総特集！ 〜 逆元から離散対数まで 〜　の　4 章](https://qiita.com/drken/items/3b4fdf0a78e7a138cd9a#4-%E7%B4%AF%E4%B9%97-an)
+
+#### 逆元を高速に計算するアルゴリズム
+$ax \equiv b \pmod{p}$ [$p$ は素数] となるような $x$ を $O(\log{p})$ で計算するアルゴリズムです。以下の記事で解説されています。
+
+* [「1000000007 で割ったあまり」の求め方を総特集！ 〜 逆元から離散対数まで 〜　の　5 章](https://qiita.com/drken/items/3b4fdf0a78e7a138cd9a#3-%E5%89%B2%E3%82%8A%E7%AE%97-a--b) 
+    * $p = 1000000007$ の場合が書かれていますが、この記事に書かれている手法は一般の素数 mod にも応用が効きます。
+
+#### 累積和
+競プロで使えるテクニックの一つです。以下の記事で解説されています。
+
+* [累積和を何も考えずに書けるようにする！](https://qiita.com/drken/items/56a6b68edef8fc605821)
+
+また、累積和の亜種として、「いもす法」というアルゴリズムもあります。そちらも勉強しておくと良いと思います。
+
+* [いもす法](https://imoz.jp/algorithms/imos_method.html)
+
+## 2-2-3. 3 個の基本データ構造をマスターする！
+前節で述べた通り、競技プログラミングにはアルゴリズムを学ぶことが大切です。一方、データ構造を学ぶことも大事です。ちなみに、アルゴリズムとデータ構造を混同して覚える人が多いのですが、違いは以下のようになります。
+
+* アルゴリズム：問題を解くための方法のこと。
+* データ構造：データの集まりを一定の形式で系統立てて格納するときの形式。
+
+さて、<font color="#00AAAA">**水色コーダー**</font>になるために必要なデータ構造は主に以下の 3 つです。
+
+* グラフ
+* 木
+* Union-Find
+
+それらのデータ構造が学習できる記事たちなどを紹介します。
+
+#### グラフ
+グラフとは、「頂点」と「辺」で構成されるデータ構造です。基礎知識は、以下の記事で解説されています。
+
+* [グラフ理論の基礎](https://qiita.com/maskot1977/items/e1819b7a1053eb9f7d61) by @maskot1977 
+
+#### 木
+木とは、$N$ 頂点 $N-1$ 辺の連結なグラフです。その特殊な性質ゆえに、競プロではよく問題にされます。（[深さ優先探索](https://qiita.com/drafts/eb50fdaece12be418faa#%E6%B7%B1%E3%81%95%E5%84%AA%E5%85%88%E6%8E%A2%E7%B4%A2-dfs)などとセットで出されることが多いです）詳しくは、以下の記事をご覧ください。
+
+* [木構造 |　木とは/木の表現/2分探索木](https://www.cqpub.co.jp/hanbai/books/18/18781/18781_9syo.pdf)
+
+#### Union-Find
+競プロで頻出のデータ構造です。以下の記事で解説されています。
+
+* [Union-Find木の解説と例題](https://qiita.com/ofutonfuton/items/c17dfd33fc542c222396) by @ofutonfuton 
+
+## 2-2-4. 過去問を解きまくる！
+皆さん、アルゴリズムとデータ構造を理解した後に、重要となってくることは過去問を解くことです。<font color="#00AAAA">**水色コーダー**</font>になる辺りまでは、
+
+　**競プロの実力 = アルゴリズムの理解度 × 競プロの演習量**
+
+だと考えることもできます。そのため、過去問を解くことはとても重要です。実際に、[mencotton さんのツイート](https://twitter.com/men_cotton/status/1218377699485372416) によると、800 問解けば 60% 以上、1100 問解けば 90% 以上の人が水色コーダーになれます。
+![22.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/c843fc96-f7bf-5b29-eeb9-9f966ff4bf37.png)
+
+一方で、**「解いた過去問の問題数 = 競プロの演習量」とは限りません。**私の考えとして、特に初中級者のうちは、「教育的な質の高い問題」と「それほど高くない問題」に分かれていると思っています。
+
+そこで、少ない問題数でも「水色コーダー」を達成しやすいように、茶色コーダー・緑コーダーにとって教育的良問だと思った問題を合計 100 問選びました。
+
+* [本記事 2-3. 節| 分野別　初中級者が解くべき過去問精選 100 問](https://qiita.com/e869120/items/eb50fdaece12be418faa#2-3-%E5%88%86%E9%87%8E%E5%88%A5%E5%88%9D%E4%B8%AD%E7%B4%9A%E8%80%85%E3%81%8C%E8%A7%A3%E3%81%8F%E3%81%B9%E3%81%8D%E9%81%8E%E5%8E%BB%E5%95%8F%E7%B2%BE%E9%81%B8-100-%E5%95%8F) <font color="#FF0000">(2/20 01:51 AM. リンクミスを修正しました)</font>
+
+にまとめられていますので、基本的なアルゴリズムを学習した後は、この精選 100 問を解き、余力があれば [AtCoder Problems](https://kenkoooo.com/atcoder/#/table/) などのサービスを利用してさらに過去問を解いていくことをお勧めします。
+
+## 2-2-5. 早解きを鍛える！　～バーチャルコンテストのすすめ～
+競プロで戦う上で、難しい問題を解くことも重要ですが、簡単な問題を安定して早解きすることも重要です。実際に、[AtCoder Beginner Contest 155](https://atcoder.jp/contests/abc155) において、
+
+* 3 完最上位のパフォーマンス：<font color="#00AAAA">**1430**</font>
+* 3 完最下位のパフォーマンス：<font color="#777777">**307**</font>
+
+と、とても大きな差があります。さて、早解きを鍛えるには何をすれば良いのでしょうか。ここでお勧めなのが「バーチャルコンテスト」です。
+
+#### とても便利なサイト「AtCoder Virtual Contest」
+* [AtCoder Virtual Contest](https://not-522.appspot.com/)
+
+を使うと、仮想的に自分でコンテストを好きな時間にやることができます。より具体的に書くと、AtCoder の過去問から何問か選んで、開始時間と終了時間を決めて、コンテスト形式で過去問を解けるという感じのサービスです。ちなみに、2 人以上の参加者と同時に戦うことができるのが面白い点の一つです。（以下のように、コンテスト同様順位表がリアルタイムで動きます）
+![23.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/fde1ab10-72f2-5fe7-0f71-bfb79aadefc6.png)
+
+このサービスを活用して、例えば以下のようなバーチャルコンテストを定期的に（例えば 1 週間に 2 回とか）やると、プログラムの実装を速くできる力が身につくと思います。
+
+* AtCoder Beginner Contest から、A 問題 1 問・B 問題 2 問・C 問題 3 問の合計 6 問を集める。
+* これを合計 30 分でできるだけ解く。
+
+水色コーダーを目指す参加者にとっては、AtCoder Beginner Contest の A, B 問題なんかあまりにも簡単かもしれませんが、早解き力はそういう基本的なところで差が付きます。そのため、高難易度の練習だけでなく、低難易度を早解きする練習もした方が実力が伸びると考えられます。
+
+---
+
+<font color="#FF0000">2/20 02:06 追記（AtCoder Problem でのバーチャル参加）</font>
+AtCoder Virtual Contest だけでなく、[AtCoder Problems](https://kenkoooo.com/atcoder/#/table/) というサイトでもバーチャルコンテストができます。GitHub に登録する必要があるなど、参加までは少し難しいのですが、想定パフォーマンス（どれくらいのレート相応の結果だったか）が出るなど利便性はこちらの方が高いです。そのため、もし使い方が分かるのであれば、AtCoder Problems でバーチャル参加をすることもお勧めします。
+<br />
+
+# 2-3. 分野別　初中級者が解くべき過去問精選 100 問
+AtCoder で<font color="#00AAAA">**水色コーダー**</font>、つまり<font color="#00AAAA">**レーティング 1200**</font> を少ない問題数で達成するために、<font color="#774400">**茶色コーダー**</font>・<font color="#007700">**緑コーダー**</font>にとって適切な教育的良問を 100 問集めました。
+
+分野ごとに問題が分けられています。また、アルゴリズムの確認問題から応用問題まで幅広い層の問題がありますので、是非解いてみることをおすすめします。**難しい問題もあるので、水色コーダーを目指す人は 100 問中 70 問正解を目安に頑張ってください。**
+
+100 問全部解けたら、<font color="#00AAAA">**水色コーダー**</font>どころか<font color="#0000FF">**青色コーダー**</font>くらいの実力が付くと思います。そのため、既に水色コーダー以上であっても、100 問全部を解いていない場合は、解く価値が大きいと思います。
+
+#### 全探索：全列挙
+**1**　[ITP1_7_B - How Many Ways?](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_7_B&lang=ja)　基本問題です。
+**2**　[AtCoder Beginner Contest 106 B - 105](https://atcoder.jp/contests/abc106/tasks/abc106_b)
+**3**　[AtCoder Beginner Contest 122 B - ATCoder](https://atcoder.jp/contests/abc122/tasks/abc122_b)
+**4**　[パ研杯2019 C - カラオケ](https://atcoder.jp/contests/pakencamp-2019-day3/tasks/pakencamp_2019_day3_c)　これが解ければ全探索に慣れたと思って良いです。
+
+#### 全探索：工夫して通り数を減らす全列挙
+**5**　[AtCoder Beginner Contest 095 C - Half and Half](https://atcoder.jp/contests/abc095/tasks/arc096_a)
+**6**　[三井住友信託銀行プログラミングコンテスト 2019 D - Lucky PIN](https://atcoder.jp/contests/sumitrust2019/tasks/sumitb2019_d)
+**7**　[JOI 2007 本選 3 - 最古の遺跡](https://atcoder.jp/contests/joi2007ho/tasks/joi2007ho_c)　面白いです。
+**8**　[Square869120Contest #6 B - AtCoder Markets](https://atcoder.jp/contests/s8pc-6/tasks/s8pc_6_b)　全探索すると無数に通り数があるように見えますが、ひとつ工夫すると現実的な通り数で全列挙できる問題です。
+**9**　[JOI 2008 予選 4 - 星座探し](https://atcoder.jp/contests/joi2008yo/tasks/joi2008yo_d)
+
+#### 全探索：ビット全探索
+**10**　[ALDS_5_A - 総当たり](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_A&lang=ja)　基本問題です。
+**11**　[AtCoder Beginner Contest 128 C - Switches](https://atcoder.jp/contests/abc128/tasks/abc128_c)
+**12**　[AtCoder Beginner Contest 002 D - 派閥](https://atcoder.jp/contests/abc002/tasks/abc002_4)
+**13**　[JOI 2008 予選 5 - おせんべい](https://atcoder.jp/contests/joi2008yo/tasks/joi2008yo_e)　茶色コーダーにはやや難問ですが解くことをおすすめします。
+**14**　[Square869120Contest #4 B - Buildings are Colorful!](https://atcoder.jp/contests/s8pc-4/tasks/s8pc_4_b)　工夫も必要で、一筋縄では解けない難問ですが、解けば確実に力がつきます。
+
+#### 全探索：順列全探索
+**15**　[AtCoder Beginner Contest 145 C - Average Length](https://atcoder.jp/contests/abc145/tasks/abc145_c)
+**16**　[AtCoder Beginner Contest 150 C - Count Order](https://atcoder.jp/contests/abc150/tasks/abc150_c)
+**17**　[ALDS_13_A - 8 クイーン問題](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_13_A&lang=ja)　面白いです。
+
+#### 二分探索
+**18**　[ALDS_4_B - 二分探索](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B&lang=ja)　基本問題です。map でも解けますが二分探索で解いてみてください。
+**19**　[JOI 2009 本選 2 - ピザ](https://atcoder.jp/contests/joi2009ho/tasks/joi2009ho_b)
+**20**　[AtCoder Beginner Contest 077 C - Snuke Festival](https://atcoder.jp/contests/abc077/tasks/arc084_a)　面白いです。
+**21**　[AtCoder Beginner Contest 023 D - 射撃王](https://atcoder.jp/contests/abc023/tasks/abc023_d)　教育的に良いです。
+**22**　[AtCoder Regular Contest 054 B - ムーアの法則](https://atcoder.jp/contests/arc054/tasks/arc054_b)　微分して二分法をすると解けます。[三分探索](https://qiita.com/ganariya/items/1553ff2bf8d6d7789127)と話が繋がってくるので、それも調べてみると良いと思います。
+**23**　[JOI 2008 本選 3 - ダーツ](https://atcoder.jp/contests/joi2008ho/tasks/joi2008ho_c)　工夫して二分探索する、チャレンジ問題です。
+
+#### 深さ優先探索
+**24**　[ALDS_11_B - 深さ優先探索](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_B)　基本問題です。
+**25**　[AOJ 1160 - 島はいくつある？](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1160&lang=jp)　グラフの連結成分数は、深さ優先探索で計算できます。
+**26**　[AtCoder Beginner Contest 138 D - Ki](https://atcoder.jp/contests/abc138/tasks/abc138_d)　木構造の問題の多くは、深さ優先探索を使います。
+**27**　[JOI 2009 予選 4 - 薄氷渡り](https://atcoder.jp/contests/joi2009yo/tasks/joi2009yo_d)　深さ優先探索は、木構造だけではありません、ということを教えてくれる問題です。再帰関数を使って解けます。
+
+#### 幅優先探索
+**28**　[ALDS_11_C - 幅優先探索](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C&lang=ja)　基本問題です。
+**29**　[AtCoder Beginner Contest 007 C - 幅優先探索](https://atcoder.jp/contests/abc007/tasks/abc007_3)　重み無しグラフの最短経路問題は、幅優先探索で解けます。
+**30**　[JOI 2011 予選 5 - チーズ](https://atcoder.jp/contests/joi2011yo/tasks/joi2011yo_e)
+**31**　[JOI 2012 予選 5 - イルミネーション](https://atcoder.jp/contests/joi2012yo/tasks/joi2012yo_e)　少し実装が重いですが、頑張れば解けます。
+**32**　[AOJ 1166 - 迷図と命ず](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1166&lang=jp)　実装が少し重いです。
+**33**　[AtCoder Beginner Contest 088 D - Grid Repainting](https://atcoder.jp/contests/abc088/tasks/abc088_d)　これが解ければ、幅優先探索に慣れたと思って良いです。
+
+#### 動的計画法：ナップザック DP
+**34**　[ALDS_10_A - フィボナッチ数](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_A&lang=ja)　超基本。「DP とは何か」を感じることができます。
+**35**　[DPL_1_B - 0,1ナップザック問題](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_B&lang=ja)　基本問題です。
+**36**　[DPL_1_C - ナップザック問題](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_C&lang=ja)　基本問題です。
+**37**　[DPL_1_A - コイン問題](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_A&lang=ja)　基本問題です。
+**38**　[ALDS_10_C - 最長共通部分列](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_C&lang=ja)　基本問題です。
+
+(ここから先は、どのような DP で解けるのかは書きませんが、全部ナップザック DP またはその亜種で解くことができます。)
+
+**39**　[JOI 2011 予選 4 - 1 年生](https://atcoder.jp/contests/joi2011yo/tasks/joi2011yo_d)
+**40**　[JOI 2012 予選 4 - パスタ](https://atcoder.jp/contests/joi2012yo/tasks/joi2012yo_d)
+**41**　[JOI 2013 予選 4 - 暑い日々](https://atcoder.jp/contests/joi2013yo/tasks/joi2013yo_d)
+**42**　[JOI 2015 予選 4 - シルクロード](https://atcoder.jp/contests/joi2015yo/tasks/joi2015yo_d)
+**43**　[パ研杯2019 D - パ研軍旗](https://atcoder.jp/contests/pakencamp-2019-day3/tasks/pakencamp_2019_day3_d)
+**44**　[AOJ 1167 - ポロック予想](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1167&lang=jp)
+**45**　[AOJ 2199 - 差分パルス符号変調](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2199&lang=jp)
+
+#### 動的計画法：区間 DP
+**46**　[ALDS_10_B - 連鎖行列積](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_B&lang=ja)　基本問題です。
+**47**　[JOI 2015 本選 2 - ケーキの切り分け 2](https://atcoder.jp/contests/joi2015ho/tasks/joi2015ho_b)　$O(N^2)$ の区間 DP です。
+**48**　[AOJ 1611 ダルマ落とし](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1611&lang=jp)　$O(N^3)$ の区間 DP です。
+
+#### 動的計画法：bit DP
+**49**　[DPL_2_A - 巡回セールスマン問題](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_2_A&lang=ja)　基本問題です。
+**50**　[Square869120Contest #1 G - Revenge of Traveling Salesman Problem](https://atcoder.jp/contests/s8pc-1/tasks/s8pc_1_g)　巡回セールスマン問題を少し変えた問題です。
+**51**　[JOI 2014 予選 4 - 部活のスケジュール表](https://atcoder.jp/contests/joi2014yo/tasks/joi2014yo_d)　bitDP に含まれるか微妙ですが、一応入れておきます。
+**52**　[JOI 2017 予選 4 - ぬいぐるみの整理](https://atcoder.jp/contests/joi2017yo/tasks/joi2017yo_d)　少し難しいですが、是非挑戦してみてください。
+
+#### 動的計画法：その他
+その他の DP として代表的なものは、[最長増加部分列問題 (LIS)](https://qiita.com/python_walker/items/d1e2be789f6e7a0851e5) です。
+**53**　[DPL_1_D - 最長増加部分列](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_D&lang=ja)
+**54**　[AtCoder Beginner Contest 006 D - トランプ挿入ソート](https://atcoder.jp/contests/abc006/tasks/abc006_4)
+**55**　[AtCoder Beginner Contest 134 E - Sequence Decomposing](https://atcoder.jp/contests/abc134/tasks/abc134_e)　チャレンジ問題です。
+
+#### 最短経路問題：ダイクストラ法
+**56**　[GRL_1_A - 単一始点最短経路](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=ja)　基本問題です。
+**57**　[JOI 2008 予選 6 - 船旅](https://atcoder.jp/contests/joi2008yo/tasks/joi2008yo_f)　後述のワーシャルフロイド法でも解けます。
+**58**　[JOI 2016 予選 5 - ゾンビ島](https://atcoder.jp/contests/joi2016yo/tasks/joi2016yo_e)　前述の幅優先探索も使います。実装がやや重めです。
+**59**　[JOI 2014 予選 5 - タクシー](https://atcoder.jp/contests/joi2014yo/tasks/joi2014yo_e)
+
+#### 最短経路問題：ワーシャルフロイド法
+**60**　[GRL_1_C - 全点対間最短経路](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C&lang=ja)　基本問題です。
+**61**　[AtCoder Beginner Contest 012 D - バスと避けられない運命](https://atcoder.jp/contests/abc012/tasks/abc012_4)
+**62**　[AtCoder Beginner Contest 079 D - Wall](https://atcoder.jp/contests/abc079/tasks/abc079_d)
+**63**　[AtCoder Beginner Contest 074 D - Restoring Road Network](https://atcoder.jp/contests/abc074/tasks/arc083_b)　ちょっと数学的考察が必要で難しいですが、是非解いてみましょう。
+
+#### 最小全域木問題
+**64**　[GRL_2_A - 最小全域木](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A&lang=ja)　基本問題です。
+**65**　[JOI 2010 春合宿 - Finals](https://atcoder.jp/contests/joisc2010/tasks/joisc2010_finals)　JOI 春合宿の問題ですが、比較的簡単です。
+**66**　[AOJ 1127 - Building a Space Station](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1127)
+**67**　[AtCoder Beginner Contest 065 D - Built?](https://atcoder.jp/contests/abc065/tasks/arc076_b)　やや難しいです。単純に最小全域木を求めると、$N$ 頂点 $N^2$ 辺になりますが、なんとそれを減らすことができます。
+
+#### 高速な素数判定法
+**68**　[NTL_1_A - 素因数分解](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A&lang=ja)　基本問題です。
+**69**　[AtCoder Beginner Contest 084 D - 2017-like Number](https://atcoder.jp/contests/abc084/tasks/abc084_d)
+
+#### 高速なべき乗計算
+**70**　[NTL_1_B - べき乗](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B&lang=ja)
+**71**　[Square869120Contest #1 E - 散歩](https://atcoder.jp/contests/s8pc-1/tasks/s8pc_1_e)
+※ べき乗だけを使う問題は少ないですが、$nCr$ などを求める際に、逆元とセットで出てくることが多いです。例えば、$ax≡1 \ (mod \ p)$ の解は $a^{p-2} \ mod \ p$ となります。（$p$ が素数の場合）
+
+#### 逆元を使う問題
+**72**　[AtCoder Beginner Contest 034 C - 経路](https://atcoder.jp/contests/abc034/tasks/abc034_c)　nCr を求めるだけの基本問題です。
+**73**　[Atcoder Beginner Contest 145 D - Knight](https://atcoder.jp/contests/abc145/tasks/abc145_d)
+**74**　[AtCoder Beginner Contest 021 D - 多重ループ](https://abc021.contest.atcoder.jp/tasks/abc021_d)
+**75**　[AtCoder Beginner Contest 149 F - Surrounded Nodes](https://atcoder.jp/contests/abc149/tasks/abc149_f)　チャレンジ問題です。解けなくても、「そういう特殊な出力形式の問題ってあるんだな」と感じてほしいです。
+
+#### 累積和
+**76**　[全国統一プログラミング王決定戦本戦 A - Abundant Resources](https://atcoder.jp/contests/nikkei2019-final/tasks/nikkei2019_final_a)　基本です。累積和を使わなくても解けますが、是非使って解いてみてください。
+**77**　[JOI 2010 本選 1 - 旅人](https://atcoder.jp/contests/joi2010ho/tasks/joi2010ho_a)
+**78**　[JOI 2011 本選 1 - 惑星探査](https://atcoder.jp/contests/joi2011ho/tasks/joi2011ho1)　二次元累積和です。
+**79**　[AtCoder Beginner Contest 106 D - AtCoder Express 2](https://atcoder.jp/contests/abc106/tasks/abc106_d)
+**80**　[GigaCode 2019 D - 家の建設](https://atcoder.jp/contests/gigacode-2019/tasks/gigacode_2019_d)
+
+(ここから先は、「いもす法」というアルゴリズムを使う場合があります。)
+
+**81**　[AtCoder Beginner Contest 014 C - AtColor](https://atcoder.jp/contests/abc014/tasks/abc014_3)　基本問題です。
+**82**　[AOJ 2013 - 大崎](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2013)
+**83**　[JOI 2015 本選 1 - 鉄道運賃](https://atcoder.jp/contests/joi2015ho/tasks/joi2015ho_a)
+**84**　[JOI 2012 本選 4 - 釘](https://atcoder.jp/contests/joi2012ho/tasks/joi2012ho4)　チャレンジ問題です。
+
+#### Union-Find
+**85**　[DSL_1_A - 互いに素な集合](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=ja)　基本問題です。
+**86**　[AtCoder Beginner Contest 075 C - Bridge](https://atcoder.jp/contests/abc075/tasks/abc075_c?lang=ja)　深さ優先探索による連結成分の個数の数え上げでも解けますが、Union-Find でも解いてみましょう。
+**87**　[AtCoder Beginner Contest 120 D - Decayed Bridge](https://atcoder.jp/contests/abc120/tasks/abc120_d)　一個の考察ステップがあり、少し難しいですが、解くことで得られる力は大きいと思います。
+
+#### その他のテクニック
+「圧縮」によって解ける問題たちです。
+
+**88**　[JOI 2008 本選 1 - 碁石ならべ](https://atcoder.jp/contests/joi2008ho/tasks/joi2008ho_a)
+**89**　[JOI 2013 本選 1 - 電飾](https://atcoder.jp/contests/joi2013ho/tasks/joi2013ho1)
+
+「単純な幾何計算」によって解ける問題たちです。標準ライブラリに存在する、2 乗根・三角関数などを使うと解けます。
+
+**90**　[Square869120Contest #5 B - Emblem](https://atcoder.jp/contests/s8pc-5/tasks/s8pc_5_b)
+**91**　[AtCoder Beginner Contest 144 D - Water Bottle](https://atcoder.jp/contests/abc144/tasks/abc144_d)　本記事では触れていませんが、[三角関数の逆関数](https://ja.wikipedia.org/wiki/%E9%80%86%E4%B8%89%E8%A7%92%E9%96%A2%E6%95%B0)を使って解くことができます。 
+
+#### 実装問題
+考察に比べて実装がとても重い問題です。練習になると思います。
+
+**92**　[AOJ 1193 - 連鎖消滅パズル](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1193&lang=jp)
+**93**　[Square869120Contest #3 B - 石落としゲーム](https://atcoder.jp/contests/s8pc-3/tasks/s8pc_3_b)
+**94**　[AOJ 1149 - ケーキカット](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1149&lang=jp)
+
+#### 数学的な問題
+AtCoder の問題の一部では、解くために数学的な考察を必要とします。上級編にも繋げていくために、水色コーダーを目指している人は「数学的考察って何なのか」「数学的考察ってどんな感じで使うのか」くらいは知っておくと良いと思うので、これを感じられる問題の代表例を紹介しておきます。
+
+**95**　[AtCoder Beginner Contest 149 B - Greedy Takahashi](https://atcoder.jp/contests/abc149/tasks/abc149_b)　200-300 点問題で出る数学的問題は大体そんな感じです。（[貪欲法アルゴリズム](http://www2.kobe-u.ac.jp/~ky/da2/haihu04.pdf)に繋がってきます。）
+**96**　[AtCoder Beginner Contest 139 D - ModSum](https://atcoder.jp/contests/abc139/tasks/abc139_d)　考察一個です。
+**97**　[AtCoder Beginner Contest 150 D - Semi Common Multiple](https://atcoder.jp/contests/abc150/tasks/abc150_d)
+**98**　[三井住友信託銀行プログラミングコンテスト2019 予選 E - Colorful Hats 2](https://atcoder.jp/contests/sumitrust2019/tasks/sumitb2019_e)
+**99**　[DDCC2020 予選 D - Digit Sum Replace](https://atcoder.jp/contests/ddcc2020-qual/tasks/ddcc2020_qual_d)　これも考察一個です。
+**100**　[Tenka1 Programmer Beginner Contest D - Crossing](https://atcoder.jp/contests/tenka1-2018-beginner/tasks/tenka1_2018_d)　やや難しいですが、頑張って解いてください。
+
+---
+
+これが全部解けたら、自信をもって「水色コーダー相当の実力」があるといってよいです。
+<br />
+
+# 2-4. 「水色コーダー」を目指す人のための Tips 5 個
+中級編の最後に、<font color="#00AAAA">**水色コーダー**</font>を目指す皆さんにとって便利な情報をいくつか紹介したいと思います。
+
+## 2-4-1. 「蟻本」のすすめ
+ところで、[プログラミングコンテストチャレンジブック（通称：蟻本）](https://www.amazon.co.jp/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E3%83%96%E3%83%83%E3%82%AF-%E7%AC%AC2%E7%89%88-%EF%BD%9E%E5%95%8F%E9%A1%8C%E8%A7%A3%E6%B1%BA%E3%81%AE%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E6%B4%BB%E7%94%A8%E5%8A%9B%E3%81%A8%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF%E3%82%92%E9%8D%9B%E3%81%88%E3%82%8B%EF%BD%9E-%E7%A7%8B%E8%91%89%E6%8B%93%E5%93%89/dp/4839941068)という本があります。
+
+この本では、競技プログラミングで使われるアルゴリズムの解説がされてあるだけでなく、各種アルゴリズムを使う競プロの問題の解き方も丁寧に説明されています。
+
+競プロ関連の本の中で最も売れているものだといって良いです。「蟻本を読んで強くなった！」という人はたくさんいるので、是非持っておきましょう。サンプルコードなども載っているので、「典型アルゴリズムのコードの書き方を忘れてしまった！」なんてときにも便利です。
+![24.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/f79c21e5-7161-d860-4563-810627a3071d.png)
+
+## 2-4-2. AOJ の「ALDS」コースのすすめ
+[初級編](https://qiita.com/e869120/items/f1c6f98364d1443148b3)でも述べたように、AOJ はプログラミングの基礎やアルゴリズムの基礎が学べるコースがたくさんあるのが特徴です。[^2]　その中で、典型アルゴリズムが学べるコースがあって、
+
+* [AIZU ONLINE JUDGE - Introduction to Algorithms and Data Structure (ALDS)](http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=ALDS1)
+
+というものです。全部で 60 問近くありますが、本記事の中級編に載っている大体のアルゴリズムが確認できるので、各種アルゴリズムを学習した後に、是非該当する分野の問題を解いてみてください。（典型アルゴリズムを既に知っていたという方も、アルゴリズムを使う練習にもなるので解くことをお勧めします）
+
+※ ちなみに、中級編どころか上級編ですら述べないようなアルゴリズムを使う問題も ALDS には載っていますので、全ての問題を解く必要はありません。
+
+## 2-4-3. 過去問は何分で解説を見ればよいか？
+さて、過去問を解いていて、そもそも解法が全然分からないとき、いつになったら解説を読めば適切なのかわからない人が多いと思います。そこで、経験則からの大体の目安を提示しておきます。
+
+|難易度 |100 点問題 |200 点問題 |300 点問題 |400 点問題 |500 点問題 |600 点問題 |
+|---|---|---|---|---|---|---|
+|茶色コーダー|5 分 |7 分 |30 分 |45 分 |- |- |
+|緑色コーダー|5 分 |5 分 |20 分 |35 分 |50 分 |2 時間 |
+比較的簡単な問題にも関わらず解法がわからない場合、「典型知識や典型テクニックを知らないから解けなかった」という可能性がとても高いです。そのため、早めに解説を見ることをおすすめします。<font color="#FF0000">(2/20 00:47 PM. 追記)</font>
+
+※ 何分経っても解法が分からなかったら、ということです。つまり、例えば緑コーダーが 400 点問題を解くとき、解き始めてから 15 分で解法がわかって実装も 10 分でできたのに、10 分間バグの原因がわからなくて合計 35 分超えてしまったので解説を見るべき、ということではないです。
+
+## 2-4-4. Twitter 活用のすすめ
+競技プログラミングをやっていくうちに、何かわからないことを質問したくなることがあると思います。例えば、
+
+> 「このコードのバグが分からない。誰か原因教えて。」
+> 「動的計画法が理解できないので教えてください。」
+
+とか、色々あると思います。そんな時に便利なのは [Twitter](https://twitter.com/home) です。基本的に競技プログラミングをやっている人は優しい（というかコミュニティがあたたかい）ので、Twitter に質問を投稿したり、ダイレクトメッセージで強い人に聞いたりすると、答えてくれる場合が多いです。
+
+また、Twitter をやっている場合、コンテストで成功して一色上にあがったときに、例えば「水色になりました！！！！」とかいうツイートをすると、とても多くの人から「おめでとう」とリプライされることがあります。これは競プロ界隈の文化の一つなのですが、色が上がったときにとてつもない達成感を得ることができます。
+
+## 2-4-5. 競プロ関連イベント参加のすすめ
+競技プログラマーが一箇所の会場に集まってコンテストをやるようなイベントが定期的に開かれます。例えば、
+
+* [東京工業大学プログラミングコンテスト2019 (TTPC2019) オンサイト](https://atnd.org/events/107816) [2019年8月31日開催]
+* [GigaCode 2019](https://gigacode.connpass.com/event/153119/) [2019年11月24日開催]
+* [ゆるふわ競技プログラミングオンサイト at FORCIA](https://forcia.connpass.com/event/165334/) [2020年2月29日開催予定]
+
+などがあります。
+
+このような競技プログラミング関連のイベントに参加する初中級者は現状それほど多くないのですが、一度参加してみることをお勧めします。
+
+* 競プロ参加者との交流ができて楽しい
+* 普段はオンライン上での活動がほとんどである「競技プログラミング」に対するモチベーションの維持、あるいはモチベーションの向上に繋がる
+
+などが、利点として挙げられます。
+<br />
+
+# 2-5. 本記事を終えた次は？
+本記事の内容をマスターできれば、<font color="#00AAAA">**水色コーダー**</font>になれると思います。水色コーダーといったら、AtCoder の上位 1 割ですので、十分中級者を名乗って良いと思います。ちなみに水色コーダーになると、半数以上の企業においてアルゴリズム構築能力がカンストします。
+
+しかし、さらに上を目指したい。<font color="#0000FF">**青色コーダー**</font>や<font color="#AAAA00">**黄色コーダー**</font>、そして<font color="FF7700">**橙色コーダー**</font>といった競プロ成績上位ランカーを狙っていきたいという方。中級編よりもさらに高いレベルまでフォローしていますので、是非上級編もお読みください。
+
+（初中級者の方でも、上級者にどういうアルゴリズム・知識・練習方法が求められるかを知る機会になると思うので、興味があれば是非お読みください。）
+
+#### 上級編
+* [レッドコーダーが教える、競プロ・AtCoder上達のガイドライン【上級編：目指せレッドコーダー！】](https://qiita.com/e869120/items/acba3dd8649d913102b5)
+
+# -1. つづく
+次は、[上級編](https://qiita.com/e869120/items/acba3dd8649d913102b5)に続きます。
+
+[^1]: 2020 年 2 月 17 日時点です。
+[^2]: 初級編で説明した [Introduction To Programming I (ITP1)](http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=ITP1)、中級編で説明した [Introduction To Algorithms and Data Sets (ALDS)](http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=ALDS1) だけではなく、動的計画法が学べる [DPL](http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=DPL)、グラフ理論が学べる [GRL](http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=GRL)、整数論が学べる [NTL](http://judge.u-aizu.ac.jp/onlinejudge/finder.jsp?course=NTL) など、AOJ には様々なコースが用意されています。
