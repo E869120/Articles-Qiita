@@ -1,0 +1,287 @@
+# 1. はじめに
+こんにちは、高校2年生のE869120です。
+私は、プログラミングの中でも[競技プログラミング](https://qiita.com/sifue/items/d582f3af426f524e5394)が好きで、[AtCoder](https://atcoder.jp/)・[日本情報オリンピック](https://www.ioi-jp.org/)・[国際情報オリンピック](https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%9A%9B%E6%83%85%E5%A0%B1%E3%82%AA%E3%83%AA%E3%83%B3%E3%83%94%E3%83%83%E3%82%AF)・[パソコン甲子園](https://web-ext.u-aizu.ac.jp/pc-concours/)などの各種大会やコンテストに出場しています。
+
+さて、2019/12/24 ～ 27 にかけて、日本全国各地から中高生プログラマーを中心とする参加者 51 名が集まり、中高生向けプログラミング合宿「[パ研合宿2019](https://drive.google.com/file/d/1ez3Zq0lS4ESgHPpf30OKGf6_W0rv4H-z/view?usp=sharing)」が開催されました。私は運営リーダーを務めましたが、イベントコンテンツの一つである「体験企画」の担当でもありました。[^1]
+
+![2.JPG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/9639e03a-e2c8-7b1a-47a0-f8ca254971f3.jpeg)
+
+体験企画の担当者であった私達高校生 2 名（[E869120](https://atcoder.jp/users/E869120)・[square1001](https://atcoder.jp/users/square1001)）は、中高生にプログラミングの本当の楽しさを何らかの形で伝えたいと思いました。そこで私達は、「[Painter Programming](https://square1001.github.io/painter-programming/)」という新しいプログラミング言語を作成し、イベント参加者に[コンテスト](https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88)形式で体験してもらいました。その結果、
+
+> とても奥深く、面白いプログラミング言語だった。
+
+と大変好評でした！！！　しかし、このプログラミング言語「[Painter Programming](https://square1001.github.io/painter-programming/)」の面白さは、合宿参加者 51 名と、僅か 20 名の[オンラインコンテスト](https://www.hackerrank.com/contests/pakencamp-2019-funevent/)参加者以外に感じてもらうことはできませんでした。そこで私は、
+
+---
+
+**この単純さゆえに生じる奥深さと面白さを、中高生だけでなく、大学生・社会人でコードを書いている皆さんにも知っていただきたい。できれば体験していただき、プログラミング言語の真の面白さを知っていただきたい！！！**
+
+---
+
+と思い、この体験企画を記事化することにしました。
+
+私もまだ高校生で、記事の執筆にも慣れておりませんので、文章がそれほど上手くないかとは思われますが、良ければ最後までお読みいただけるとありがたいです！
+
+## 目次
+|章 |タイトル |備考 |
+|---|---|---|
+|1. |[はじめに](https://qiita.com/e869120/items/92f19314ac5ea9a1e82a#1-はじめに) | |
+|2. |[Painter Programming とは](https://qiita.com/e869120/items/92f19314ac5ea9a1e82a#2-painter-programmingとは) |塗り絵プログラミング言語の紹介です！ |
+|3. |[どのようにして体験してもらったか](https://qiita.com/e869120/items/92f19314ac5ea9a1e82a#3-どのようにして体験してもらったか) |どのように「Painter Programming」を楽しんでもらったか紹介します。 |
+|4. |[結果・反響](https://qiita.com/e869120/items/92f19314ac5ea9a1e82a#4-結果反響) | |
+|5. |[面白い塗り方・非人間的な塗り方](https://qiita.com/e869120/items/92f19314ac5ea9a1e82a#5-面白い塗り方非人間的な塗り方) |面白い問題例・人間には思いつかない解法例を紹介します。 |
+|6. |[まとめ](https://qiita.com/e869120/items/92f19314ac5ea9a1e82a#6-まとめ) | |
+<br /> 
+
+
+# 2. 「Painter Programming」とは
+「Painter Programming」は、[マス目](https://dic.pixiv.net/a/%E3%83%9E%E3%82%B9%E7%9B%AE)の上をロボットが動き、マス目を白黒に塗っていくプログラミング言語です。[文法](https://qiita.com/e869120/items/92f19314ac5ea9a1e82a#文法)は僅か 6 種類、使う文字の種類は僅か 8 種類と非常に単純なものです。しかし、とても奥深く、長い時間楽しめる仕様となっています。
+![1.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/8862e5b4-8994-4d1d-17ca-343e979371eb.png)
+
+## 基本的な仕様
+* $H$ 行 $W$ 列のマス目を 1 台のロボットが動きます。（$H$、$W$ の値はあなたが指定できます。例えば以下の図では $H=4$、$W=4$ です）
+* 最初、ロボットは一番左上のマスにおり、右の方向を向いています。
+* 次に、少し下に書かれている「[文法](https://qiita.com/e869120/items/92f19314ac5ea9a1e82a#文法)」「[規則](https://qiita.com/e869120/items/92f19314ac5ea9a1e82a#規則)」にならって書かれたプログラムに従い、直進・左折・右折などの操作を繰り返し行うことによってマス目の中を動き、適切にマス目を白と黒で塗っています。（プログラムは左の命令から順に実行されます）
+* プログラムの実行が終わると、マス目の中には白と黒で彩られた模様が描かれます。
+![3.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/05c15fae-301f-3edd-8108-ff49e28cae87.png)
+
+## 文法
+このプログラミング言語は、以下の 6 種類の文法から成ります。
+
+|命令  |意味  |
+|---|---|
+|F  |今向いている方向に 1 マス進む。ただし外壁に当たる場合はそのマスにとどまる  |
+|L  |向いている方向を 90 度左回転させる  |
+|R  |向いている方向を 90 度右回転させる  |
+|!  |現在ロボットのいるマスの色が白なら黒に、黒なら白にする |
+|()  |カッコの中をループする。ループの開始時点で、現在ロボットのいるマスが黒マスであれば、ループを抜け出す。 |
+|[]  |カッコの中をループする。ループの開始時点で、ロボットの向いている目の前のマスが外壁である（次進むマスが存在しない）場合、ループを抜け出す。 |
+
+## 規則
+以下のような規則に反した場合、エラーを起こします。そうでない場合、プログラムは実行されます。
+
+* 実行時間制限：プログラムは 100,000 ステップ以内に実行を終了させなければならない。
+* カッコの対応：カッコの対応は正しくなければならない。例えば、<code>([)]</code>や<code>())(()</code>のようなカッコの対応はしてはならない。
+* 正しい文字を使う：「文法」の表にある 8 種類（<code>F</code>, <code>L</code>, <code>R</code>, <code>!</code>, <code>(</code>, <code>)</code>, <code>[</code>, <code>]</code>）以外の文字を使ってはならない。例えば、<code>FLY</code>などというコードを書いたらエラーを起こす。
+
+## 具体例 (1)
+例えば、$3 \times 3$ のマス目で、<code>F!FFRF!</code> というコードを実行させると、以下の図のようにロボットが動き、$2$ つのマス目が塗られます。
+![4.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/782e4f58-51a1-0e8f-d0dd-b141fc8759f4.png)
+動画（GIF画像）にすると、以下のような感じになります。
+![gif1.gif](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/214f3117-2e6e-a0c7-2d65-34ad89753d73.gif)
+
+## 具体例 (2)
+例えば、$3 \times 3$ のマス目で、<code>[F]</code> というコードを実行させると、以下の図のようにロボットが動きます。
+![5.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/83af5620-a9a9-0315-da84-fa8aaddbe883.png)
+動画（GIF画像）にすると、以下のような感じになります。
+![gif2.gif](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/9615b0b0-dbf1-7194-7f1a-757555af061a.gif)
+
+## ソースコード・製作にあたって
+* [Web ページのソースコード (index.html)](https://drive.google.com/file/d/1YZgMxBXWNj0Xq0Xhe807-XBF2wy-vIFz/view?usp=sharing)
+* [Painter Programming をコンパイル・実行させるためのソースコード (execution.js)](https://drive.google.com/file/d/1Ls6y-4Hz42ZmSU3rp3D8CVv52HDLRD5j/view?usp=sharing)
+* [CSS (css.css)](https://drive.google.com/file/d/1s4ACE2Poko6bhkicbJdP0E9web71EG43/view?usp=sharing)
+
+（作成したコードは主に 3 つです。ソースコードが見やすいように、便宜上 text 形式で公開しています。）
+
+合計で 600 行程度、約 19KB 程度となりましたので、Web ページとしては軽い方だと思います。Web ページの製作は主に、双子のもう片方である [square1001](https://atcoder.jp/users/square1001) さんが行いましたが、8 時間程度かかったようです。ビジュアライザにおいて、再生速度を秒速 1 ~ 4096 ステップの間で調整できるようにするところを工夫したようです。
+![6.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/9884e186-a5f6-a382-71fc-71b447ad8bcd.png)
+<br />
+
+# 3. どのようにして体験してもらったか
+今回は、以下の形式の問題を何問か、コンテスト形式で解くことで「Painter Programming」を体験してもらうことにしました。（コンテストは 70 分 9 問でした）
+
+* 模様が与えられるので、その模様の通りに塗り絵をするプログラムを書く。
+* ただし、プログラムの文字数を短くした方が、点数が高い。（いわゆる[コードゴルフ/ショートコーディング](https://yukicoder.me/wiki/golf)）  
+![7.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/493f901c-bb8b-cc95-8ab2-892fa17b5726.png)
+
+## 問題例 (1)
+より分かりやすくするため、体験企画コンテストの問題例を紹介していきたいと思います。
+
+### 問題文
+以下の塗り絵をしなさい。（マス目の大きさは $4 \times 4$）
+![8.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/7c80908d-402f-dd88-ee04-2566476b8df5.png)
+
+### 解法1
+ループ等を一切使わずに、安直に塗ることを考えます。そうすると、以下のようなコードで塗ることができます。コード長は**25文字**です。[ビジュアライザ](https://square1001.github.io/painter-programming/)で試してみましょう。
+
+~~~
+FF!FRFRFFF!LFLFFF!RFRFF!F
+~~~
+
+ちなみに、以下の図を参考にすると、プログラムの動きがわかりやすくなるかと思います。
+![11.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/b7d8d042-1d8a-15cb-e2b9-b6acbff244ea.png)
+
+### 解法2
+外周を時計回りに、つまり (上4マス)→(右4マス)→(下4マス)→(左4マス) の順に塗っていくことを考えます。そのとき、常に4マス中第3マス目が黒マスで、それ以外は白マスという感じになります。そうすると、ループが使えそうですね。
+![9.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/567c8cf9-6fe8-ebb5-2f83-72172e2e84ec.png)
+外壁でループを抜け出す<code>[]</code>は使えそうにはないので、黒マスでループを抜け出す<code>()</code>を使うことを考えます。そこで、最初に2マス進んでから、<code>!FRFF</code>という処理（塗る→1マス進む→90度右回転→2マス進む）をループさせると上手くいきます。上から $x$ 行目、左から $y$ 列目のマスを $(x, y)$ と呼び、特に左上のマスを $(1, 1)$ とするとき、
+
+* 1回目のループに入るときにはマス $(1, 3)$ におり、その後黒く塗られる
+* 2回目のループに入るときにはマス $(3, 4)$ におり、その後黒く塗られる
+* 3回目のループに入るときにはマス $(4, 2)$ におり、その後黒く塗られる
+* 4回目のループに入るときにはマス $(2, 1)$ におり、その後黒く塗られる
+* 5回目のループに入るときにはマス $(1, 3)$ におり、既に黒く塗られているのでループを抜け出し、プログラムが終了する
+
+ソースコードは以下のようになります。**9文字**です。[ビジュアライザ](https://square1001.github.io/painter-programming/)で試してみましょう。
+
+~~~
+FF(!FRFF)
+~~~
+
+## 問題例 (2)
+さて、もう少し難しい問題についても考えてみましょう。
+
+### 問題文
+以下の塗り絵をしなさい。（マス目の大きさは $10 \times 10$）
+![10.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/1f4a6647-c216-02c7-2ceb-d79a356c3efd.png)
+
+### 解法1
+問題例 (1) の解法1のように、ループを一切使わずに安直に塗ると、以下のように**217文字**かかります。[ビジュアライザ](https://square1001.github.io/painter-programming/)で試してみましょう。
+
+~~~
+!F!F!F!F!F!F!F!F!F!RFR!F!F!F!F!F!F!F!F!F!LFL!F!F!F!F!F!F!F!F!F!RFR!F!F!F!F!F!F!F!F!F!LFL!F!F!F!F!F!F!F!F!F!RFR!F!F!F!F!F!F!F!F!F!LFL!F!F!F!F!F!F!F!F!F!RFR!F!F!F!F!F!F!F!F!F!LFL!F!F!F!F!F!F!F!F!F!RFR!F!F!F!F!F!F!F!F!F!
+~~~
+
+### 解法2
+外壁に当たるとループから抜け出す種類のループ<code>[]</code>を使うと、コード長が削減できます。例えば、一行全部を黒く塗る操作について、解法1では<code>!F!F!F!F!F!F!F!F!F!</code>であったものを<code>[!F]!</code>に置き換えることができます。10箇所すべて書き換えると、以下のように**77文字**まで減らすことができます。[ビジュアライザ](https://square1001.github.io/painter-programming/)で試してみましょう。
+
+~~~
+[!F]!RFR[!F]!LFL[!F]!RFR[!F]!LFL[!F]!RFR[!F]!LFL[!F]!RFR[!F]!LFL[!F]!RFR[!F]!
+~~~
+
+### 解法3（やや難しめ）
+2 行を黒く塗る操作<code>[!F]!RFR[!F]!LFL</code>を少し変形して、<code>L[!F]!RFR[!F]!LF</code>を一つのまとまりとして表します。このまとまりを<code>[]</code>を用いてループさせると、5回のループが終わったところで目の前のマスが壁になり、ループから抜け出します。（ただし、最初の 1 文字に <code>R</code> を追加する必要があります。それをしなければ上向きの状態でループに突入してしまいます。）
+
+そのような工夫を行うと、以下のように**19文字**まで減らすことができます。解法の理解が難しめだと思うので、[ビジュアライザ](https://square1001.github.io/painter-programming/)で試してみましょう。
+
+~~~
+R[L[!F]!RFR[!F]!LF]
+~~~
+
+### 解法4 (???)
+実は**10文字**で塗ることができる解法があるのです。考えてみてください！（解説は[5章「面白い塗り方・非人間的な塗り方」](https://qiita.com/e869120/items/92f19314ac5ea9a1e82a#5-面白い塗り方非人間的な塗り方)を参照）
+![12.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/a8c39850-a29f-6615-f857-9ac69243f201.png)
+(参照：当図は「写真AC」を利用。)
+<br />
+
+# 4. 結果・反響
+9問の問題を70分で解く「[体験企画コンテスト](https://www.hackerrank.com/contests/pakencamp-2019-funevent/challenges)」では、合宿参加者・オンライン参加者含め69名が参加しました。その多くは[競技プログラミング](https://qiita.com/sifue/items/d582f3af426f524e5394)の成績上位者です。中でも、
+
+* [AtCoder 株式会社](https://atcoder.jp/company?lang=ja)の社員である[snuke](https://atcoder.jp/users/snuke)さん
+* [第30回 国際情報オリンピック つくば大会](https://ioi2018.jp/)の選手である[WA_TLE](https://atcoder.jp/users/WA_TLE/)さん
+* [第29回 国際情報オリンピック イラン大会](http://ioi2017.org/)の選手である[maroonrk](https://atcoder.jp/users/maroonrk)さん
+
+などにも参加していただきました！！！
+
+## 出題された問題
+出題された問題は、[こちら](https://drive.google.com/file/d/1f3rPIFtpEFR_a3suzfDVzXA5JEguIwfi/view?usp=sharing)となります。
+
+## 結果
+すべての問題を解くことに成功した人は、6/69人(8.7%) でした。
+また、一部の問題で、作問者の想定解法より短いソースコードでの解法が出て、びっくりしました。作問者と競技者の最短コードのうち短い方は、以下のようになります。
+
+~~~
+Problem #1: Length =  1, Code = "!"
+Problem #2: Length =  9, Code = "FF(!FRFF)"
+Problem #3: Length =  8, Code = "[(!FR)F]"
+Problem #4: Length = 10, Code = "[F(!LFRR)]"
+Problem #5: Length = 21, Code = "([!FF]!R[FR[F!F]]LFL)"
+Problem #6: Length = 34, Code = "R[L[F(!FFRF)FFFF]RFFFFR[!FFFFF]LF]"
+Problem #7: Length = 19, Code = "(((!F)RF)RFRF!LFLF)"
+Problem #8: Length = 32, Code = "([!F]R)RFFLF((!F)RRF!FLF)[!FRFL]"
+Problem #9: Length = 23, Code = "[F]R(![RFLF!]L[LFRF]RF)"
+~~~
+
+**皆さん、良ければより短いソースコードにチャレンジしてみてください。**もし見つかったらコメント欄に書いていただけると助かります！
+
+#### 更新（2020.3.2）
+問題 8 の記録が @shino_sky さんによって破られました。ソースコードは以下の通りです。ありがとうございます！
+
+~~~
+Problem #8: Length = 27, Code = "(((!F)RF)RFRF!LFLF)[!FRFL]!"
+~~~
+
+## 企画の反響
+この企画がどれだけ良かったか、合宿参加者のうち 31 名に、0 ～ 10 の 11 段階評価でアンケートを取りました。（0: 最悪、5: 普通、10: 人生の中で最も面白い体験だった）[^2]
+![13.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/9a76aed3-108e-9d5c-a9b4-3692f9fc0ba3.png)
+「満足」以上が全体の9割を超えていただけではなく、**「人生の中で最も面白い体験の一つだった」と答えた人が25.8%いるという、大好評に終わりました！！！**
+<br />
+
+# 5. 面白い塗り方・非人間的な塗り方
+さて、この「Painter Programming」の奥深さを知っていただくために、本当に面白い塗り方や、人間には絶対思いつかないだろうという塗り方を、3例紹介していきたいと思います。問題例Aは[コンテストの4問目](https://qiita.com/e869120/items/92f19314ac5ea9a1e82a#出題された問題)です。問題例B・Cはコンテストに出題されていませんが、面白いです。
+
+## 問題例A [3章問題例(2)の解法4]
+以下の塗り絵をしなさい。（マス目の大きさは $10 \times 10$）
+![10.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/1f4a6647-c216-02c7-2ceb-d79a356c3efd.png)
+最短の解法は作問者も思いつかず、10文字以下のソースコード数百万通りを全探索するプログラムを書いてようやく分かったのですが、以下の**10文字**のソースコードが最短のようです。これ以上短いソースコードはありません。
+
+~~~
+[F(!LFRR)]
+~~~
+
+なんとこの塗り方は、「上から順に一列ずつ塗っていく」でもなく、「左から順に一列ずつ塗っていく」でもなく、「外周から順に塗っていく」でもない、以下のようなすごい特殊な塗り方なのです！下の図を見る前に、是非[ビジュアライザ](https://square1001.github.io/painter-programming/)で試してみましょう。
+![14.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/06824d3e-40a7-9a9a-5010-a4287fbbf4aa.png)
+
+## 問題例B
+以下の塗り絵をしなさい。（マス目の大きさは $10 \times 10$）
+![15.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/71e32553-01a6-d497-b29e-2677ee20cfc4.png)
+数字の「7」を作るという問題です！！！
+
+斜めに塗るという操作が必要なので、少しコード長が長くなると思います。
+
+### 解法1
+最初に一番多くの人が思いつきそうな解法を説明します。例えば、
+
+* まず、一番上の行をまず塗る。<code>[F!]</code>という命令で塗ることができる。
+* 次に、向きを下向きに変える。<code>R</code>という命令で変えられる。
+* 次に、左下の方向に進みながら塗る。<code>F!RF!L</code>という命令で、適切に塗った上で1マス左下に進めるので、これをループに入れると、<code>[F!RF!L]</code>という命令で斜めを塗ることができる。
+
+これを合成させると、以下のように**13文字**のコードで「数字の7」を塗ることができます。[ビジュアライザ](https://square1001.github.io/painter-programming/)で試してみましょう。
+
+~~~
+[F!]R[F!RF!L]
+~~~
+
+### 解法2
+実はもっと短い、とんでもない解法があるのです！**12文字**で「数字の7」を描くことができます。
+
+~~~
+[!F(!RR)LFR]
+~~~
+
+ロボットの動きを説明すると、まず小さい「7」を作って、これを $3 \times 3$、$4 \times 4$、$5 \times 5$、…というように段々と広げていき、最終的には $10 \times 10$ の「7」にするという方針です。[ビジュアライザ](https://square1001.github.io/painter-programming/)で試してみると、わかりやすいと思います。
+
+## 問題例C
+以下の塗り絵をしなさい。（マス目の大きさは $17 \times 17$）
+![16.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/584812dd-a895-0fe7-bdb8-9bdcccbb8144.png)
+
+安直に、ループを使わずに塗ると**700文字以上**かかります。
+
+~~~
+F!FFFF!FFFF!FFFF!FFFRRFFFFFFFFFFFFFFFFLFLFF!FF!FF!FF!FF!FF!FF!FF!RRFFFFFFFFFFFFFFFFLFLF!FF!FF!FF!FF!FF!FF!FF!FRRFFFFFFFFFFFFFFFFLFL!FF!FF!FF!FF!FF!FF!FF!FFRRFFFFFFFFFFFFFFFFLFLF!FF!FF!FF!FF!FF!FF!FF!FRRFFFFFFFFFFFFFFFFLFLFF!FF!FF!FF!FF!FF!FF!FF!RRFFFFFFFFFFFFFFFFLFLF!FF!FF!FF!FF!FF!FF!FF!FRRFFFFFFFFFFFFFFFFLFL!FF!FF!FF!FF!FF!FF!FF!FFRRFFFFFFFFFFFFFFFFLFLF!FF!FF!FF!FF!FF!FF!FF!FRRFFFFFFFFFFFFFFFFLFLFF!FF!FF!FF!FF!FF!FF!FF!RRFFFFFFFFFFFFFFFFLFLF!FF!FF!FF!FF!FF!FF!FF!FRRFFFFFFFFFFFFFFFFLFL!FF!FF!FF!FF!FF!FF!FF!FFRRFFFFFFFFFFFFFFFFLFLF!FF!FF!FF!FF!FF!FF!FF!FRRFFFFFFFFFFFFFFFFLFLFF!FF!FF!FF!FF!FF!FF!FF!RRFFFFFFFFFFFFFFFFLFLF!FF!FF!FF!FF!FF!FF!FF!FRRFFFFFFFFFFFFFFFFLFL!FF!FF!FF!FF!FF!FF!FF!FFRRFFFFFFFFFFFFFFFFLFLFFF!FFFF!FFFF!FFFF!F
+~~~
+
+一方で、以下のような、とても人間には思いつかないような塗り方をしてみましょう。
+
+~~~
+[FLFFF([F!]RR)]
+~~~
+
+実際に、[ビジュアライザ](https://square1001.github.io/painter-programming/)で試してみましょう。再生速度は秒速 500～1000 程度がおすすめです。Webページの製作者 square1001 氏によると、
+
+> ミシンで織物を縫っているような動き
+
+が見られると思います。この方法だと、$17 \times 17$ のマス目を上図のように塗るためには、**11465ステップ**必要です。$21 \times 21$ にすると **21037ステップ**、$29 \times 29$ にすると **53597ステップ**必要になります。一般化して[計算量オーダーの考え方](https://qiita.com/drken/items/872ebc3a2b5caaa4a0d0)を用いて表すと、$N \times N$ のマス目を塗るのに $O(N^3)$ 回のステップ数が必要となります。
+![17.PNG](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/507979/beaaf603-aaf5-65af-5592-8220b598ec3a.png)
+合計で $N^2$ 個のマスしかないのに $O(N^3)$ ステップかかるのは、一見不思議なくらい遅いのです。しかし、僅か **15文字** のコードで、これを実現できてしまうのは本当に面白いことなのです。
+<br />
+
+# 6. まとめ
+このように、「Painter Programming」において、できるだけ短いソースコードで塗り絵をするのは、プログラミング言語の単純さゆえに面白く、奥深く、そして楽しいことなのです。そして競技プログラミング経験者の方にも、未経験者の方にも、「その1文字を削り出す面白さ」を深く感じていただける最高の方法の一つだと思います。
+
+最後に、「Painter Programming」を、一人でも多くの人に楽しんでいただければ、本当に嬉しいです。
+
+記事は以上です。まだ人生経験の少ない高校生が書く記事ですので、理解しにくかったかもしれませんが、最後までお読みいただきありがとうございました。
+
+[^1]: 「パ研合宿2019」は、2019年12月24日 ～ 27日にかけて 3 泊 4 日で開催された、[筑波大学附属駒場中学校・高等学校（通称、筑駒）](https://www.komaba-s.tsukuba.ac.jp/)のパソコン研究部の合宿です。実際には中高生競技プログラマー向けイベントのうち一つであるため、筑駒在校生以外からも多数の参加者が出ました。
+[^2]: 実際に使用したアンケートは[こちら](https://docs.google.com/forms/d/1g-y8zfGXBQxc_7ilgN6RRtNF8XIeaNl1fFyiXfTYddw/edit)となります。体験企画に関するアンケートは4枚中3枚目ですので、ページをめくらなければ見ることはできませんが、「体験企画に関する評価はどれくらいでしょうか。（0：最悪、5：普通、10：人生の中で最も面白かった）」という形で質問をしました。
